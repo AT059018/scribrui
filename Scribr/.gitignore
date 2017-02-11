@@ -22,3 +22,6 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+/testedb.hsql.log
+/testedb.hsql.properties
+/testedb.hsql.script
