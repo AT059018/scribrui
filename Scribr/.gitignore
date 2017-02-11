@@ -25,3 +25,4 @@ nbdist/
 /testedb.hsql.log
 /testedb.hsql.properties
 /testedb.hsql.script
+/testedb.hsql.lck
