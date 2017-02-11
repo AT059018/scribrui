@@ -1,0 +1,75 @@
+.blue { background: blue }
+.grey { background: grey }
+.orange {color: #fd8741;}
+.paperclip {
+	font-size: x-large;
+	margin-top: 5px;
+}
+.chats-row { height: 100vh; }
+.chats-row div { 
+    height: 50%;
+    border: 1px solid #ddd;
+    padding: 0px; 
+}
+
+.list-group-item {
+    border: none;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-radius: 10px;
+}
+.list-group-item:first-child {
+    border-top: none;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+
+.current-chat { 
+    height: 100vh; 
+    border: 1px solid #ddd;
+}
+
+.chat-toolbar-row {
+    background-color: #3f3f3f;
+}
+
+.chat-toolbar {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.current-chat-area {
+    padding-top: 10px;
+    overflow: auto;
+    height: 92vh;
+    background-color: #fafafa;
+}
+
+.body {
+	background-color: #eee;
+	padding-top: 50px;
+	overflow-y: hidden;
+}
+
+.action-font {
+	font-family: 'Raleway', cursive;
+	font-size: x-large;
+	font-weight: 800;
+	color: #3f3f3f;
+	
+}
+.transcript-font {
+	font-family: 'Raleway', sans-serif;
+	font-size: medium;
+	color: #3f3f3f;
+}
+
+.scribr-logo {
+	width:100px;
+}
+
+.nav-custom {
+	background-color: #3f3f3f !important;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1px 5px rgba(0,0,0,.75);
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html layout:decorator="layout" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title>Testing</title>
+</head>
+<body class="body">
+	<!-- /* Content of this page will be decorated by the elements of layout.html (task/layout) */ -->
+	<div layout:fragment="content">
+
+		<nav class="navbar nav-custom navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#"> <img class="scribr-logo" alt="Scribr."
+						src="img/scribr-logo-s.png" />
+					</a>
+				</div>
+			</div>
+		</nav>
+
+
+		<div class="col-md-12 current-chat">
+			<div class="row current-chat-area">
+				<div class="col-md-12">
+					<ul class="media-list">
+						<li class="media" style="display:none">
+							<div class="media-body">
+								<div class="media">
+									<a class="pull-left" href="#"><span class="glyphicon orange paperclip" aria-hidden="true"></span>
+									</a>
+									<div class="media-body">
+										<span></span><br /><small class="text-muted"></small>
+									</div>
+								</div>
+							</div>
+						</li>
+						
+						<li class="media" th:each="sen: ${entries}">
+							<div class="media-body">
+								<div class="media">
+									<a class="pull-left" href="#"> <span
+										class="glyphicon glyphicon-paperclip orange paperclip"
+										aria-hidden="true" th:if="${sen.task}"></span>
+									</a>
+									<a class="pull-left" href="#"> <span
+										class="glyphicon orange paperclip"
+										aria-hidden="true" th:if="${!sen.task}"></span>
+									</a>
+									<div class="media-body">
+										<span class="action-font" th:text="${sen.sentence}"  th:if="${sen.task}">Lorem Ipsum has been the
+											industry's standard dummy text ever since the 1500s, when an
+											unknown printer took a galley of type and scrambled it to
+											make a type specimen book.</span><span class="transcript-font" th:text="${sen.sentence}"  th:if="${!sen.task}">Lorem Ipsum has been the
+											industry's standard dummy text ever since the 1500s, when an
+											unknown printer took a galley of type and scrambled it to
+											make a type specimen book.</span> <br /> <small class="text-muted"><span th:text="${sen.username}"></span> | <span th:text="${#dates.format(sen.created, 'HH:MM:ss a')}"></span></small>
+									</div>
+								</div>
+							</div>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+</body>
+</html>
