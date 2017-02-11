@@ -21,7 +21,8 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
-import org.apache.commons.codec.binary.Base64;
+
+import org.apache.tomcat.util.codec.binary.Base64;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.stereotype.Service;
@@ -43,12 +44,8 @@ public class JiraRestClient {
     }
 
     public void send(String summary, String description) {
-    	
         try {
-        
             String issue = this.createIssue(summary, description);
-            
-            
         } catch (Exception ex) {
             System.err.println(ex);
         }
