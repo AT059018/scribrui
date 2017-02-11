@@ -1,6 +1,7 @@
 package io.ecx.scribr.controller;
 
 
+import org.apache.commons.lang3.BooleanUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,9 +56,9 @@ public class MainController {
 		sentenceRepository.save(model);
 		template.convertAndSend("/topic/sentence", model);
 		// send to jira
-		
-		jiraClient.send(model.getSentence(), model.getSentence());
-		
+		if(BooleanUtils.isTrue(model.getTask())) {
+			jiraClient.send(model.getSentence(), model.getSentence());
+		}
 		LOG.info(model.toString());
 		return new ResponseEntity<JsonReponse>(new JsonReponse(true),HttpStatus.OK);
 	}
