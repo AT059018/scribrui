@@ -49,6 +49,14 @@ public class MainController {
 		return "index";
 	}
 	
+	@RequestMapping(path = "/init", method = RequestMethod.GET)
+	public String init(Model model) {
+		model.addAttribute("title", title);
+		sentenceRepository.deleteAll();
+		model.addAttribute("entries", sentenceRepository.findAll());
+		return "index";
+	}
+	
 	@CrossOrigin(origins = "*")
 	@RequestMapping(path = "/api/add.json", method=RequestMethod.POST)
 	public ResponseEntity<JsonReponse> add(@RequestBody Sentence sentence) throws Exception {
