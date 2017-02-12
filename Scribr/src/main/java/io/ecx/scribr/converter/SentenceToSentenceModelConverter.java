@@ -26,9 +26,9 @@ public class SentenceToSentenceModelConverter implements Converter<Sentence, Sen
 		
 		if(source.getSpeaker() != null) {
 			if(source.getSpeaker() % 2 == 0) {
-				model.setUsername("Tom");
-			} else {
 				model.setUsername("Victoria");
+			} else {
+				model.setUsername("Tom");
 			}
 		}
 		return model;
