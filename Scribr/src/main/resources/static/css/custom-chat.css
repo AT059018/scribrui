@@ -73,3 +73,8 @@
 	background-color: #3f3f3f !important;
 	box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1px 5px rgba(0,0,0,.75);
 }
+
+mark{
+    color: #fd8741;
+    font-weight:bold;
+}
